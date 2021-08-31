@@ -1,7 +1,8 @@
 const api = 'http://localhost:3000/api/teddies';
 
-const insertArticle = async () => {
 
+const insertProducts = async () => {
+    
     // const articles = await fetch('${api}').json();
  const products = await fetch('${api}').then(result => result.json());
     
@@ -20,7 +21,8 @@ const insertArticle = async () => {
               </div> </a>';   
     };
 
+    console.log("hello");
 
-  insertArticle();
+  insertProducts();
 
 };
