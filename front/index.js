@@ -5,7 +5,7 @@ console.log("hello");
 const insertProducts = async () => {
 
    const products = await fetch(api)
-   .then(result => result.json())
+   .then((result) => result.json())
    .catch(() => console.log("le fetch n'a pas fonctionné"));
     
     console.log(products);
