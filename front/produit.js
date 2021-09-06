@@ -11,9 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const product = document.getElementById("product");
 
-  product.innerHTML += `
-  
-    <div class="card" style="width: 18rem;">
+  product.innerHTML += `<div class="card" style="width: 18rem;">
                 <img src="${item.imageUrl}" class="card-img-top" alt="...">
                 
                 <div class="card-body" id="article">
@@ -28,9 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     item
                   )})'>Ajout</button>
                 </div>
-            </div>
-  
-  `;
+            </div>`;
 });
 
 function addToCart(item) {
