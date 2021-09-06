@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const item = await fetch(`http://localhost:3000/api/teddies/${id}`)
     .then((res) => res.json())
-    .catch((e) => console.log(""));
+    .catch((e) => console.log("le fetch n'a pas fonctionné"));
 
   console.log(item);
 
