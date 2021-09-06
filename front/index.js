@@ -16,8 +16,7 @@ const insertProducts = async () => {
                  <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}"> 
                  <div class="card-body" id="article"> 
                      <h5 class="card-title" id="article-titre">${product.name}</h5>
-                     <p class="card-text" id="article-description">${product.description}</p>
-                     <p class="font-weight-bold card-text"><span id="article-prix">${product.price}</span>€</p>
+                     <p class="font-weight-bold card-text"><span id="article-prix">${product.price * 0.01}}</span>€</p>
                  </div>  
               </div>
             </a>`;   
