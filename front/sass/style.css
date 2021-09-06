@@ -6,6 +6,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #a2370c;
+}
+
 .icon-header {
   font-size: 3em;
 }
