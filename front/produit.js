@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <div class="card-body" id="article">
                   <h5 class="card-title" id="article-titre">${item.name}</h5>
 
-                  <select id="couleur">
+                  <select id="couleur" label="Choisir une couleur">
                     ${item.colors.map((color) => `<option>${color}</option>`)}
                   </select>
 
                   <p class="card-text" id="article-description">${item.description}</p>
-                  <p class="font-weight-bold card-text"><span id="article-prix">${item.price * 0,01}</span>€</p>
+                  <p class="font-weight-bold card-text"><span id="article-prix">${item.price * 0.01}</span>€</p>
                   <button onClick='addToCart(${JSON.stringify(
                     item
                   )})'>Ajouter au panier </button>
