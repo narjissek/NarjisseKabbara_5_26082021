@@ -20,8 +20,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                   <select id="couleur">
                     ${item.colors.map((color) => `<option>${color}</option>`)}
                   </select>
-                  <p class="card-text" id="article-description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="font-weight-bold card-text"><span id="article-prix">20,00</span>€</p>
+
+                  <p class="card-text" id="article-description">${item.description}</p>
+                  <p class="font-weight-bold card-text"><span id="article-prix">${item.description}* 0,01</span>€</p>
                   <button onClick='addToCart(${JSON.stringify(
                     item
                   )})'>Ajout</button>
