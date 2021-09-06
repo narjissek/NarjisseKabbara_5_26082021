@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const product = document.getElementById("product");
 
-  product.innerHTML += `<div class="card" style="width: 18rem;">
+  product.innerHTML += `<div class="card" style="width: 50%;">
                 <img src="${item.imageUrl}" class="card-img-top" alt="...">
                 
                 <div class="card-body" id="article">
@@ -22,10 +22,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                   </select>
 
                   <p class="card-text" id="article-description">${item.description}</p>
-                  <p class="font-weight-bold card-text"><span id="article-prix">${item.description}* 0,01</span>€</p>
+                  <p class="font-weight-bold card-text"><span id="article-prix">${item.price * 0,01}</span>€</p>
                   <button onClick='addToCart(${JSON.stringify(
                     item
-                  )})'>Ajout</button>
+                  )})'>Ajouter au panier </button>
                 </div>
             </div>`;
 });
