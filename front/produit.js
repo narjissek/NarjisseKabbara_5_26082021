@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <div class="card-body" id="article">
                   <h5 class="card-title" id="article-titre">${item.name}</h5>
 
-                  <select id="couleur" label="Choisir une couleur">
+                  <span>choisir une couleur: </span> <select id="couleur" label="Choisir une couleur">
                     ${item.colors.map((color) => `<option>${color}</option>`)}
                   </select>
 
