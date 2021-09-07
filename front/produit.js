@@ -32,31 +32,48 @@ document.addEventListener("DOMContentLoaded", async () => {
             </div>`;
 });
 
+
 function addToCart(item) {
   const couleur = document.getElementById("couleur").value;
 
   const storage = window.localStorage;
 
-  /*
-  
-  item = {
-      colors: [],
-      name,
-      price
-  }
-  
-  */
+    
+  storage.setItem("panier", JSON.stringify(item));
 
   item["selectedColor"] = couleur;
   item.colors = undefined;
 
-  /*
-      item = {
-          name,
-          price,
-          selectedColor
-      }
-      */
 
-  storage.setItem("panier", JSON.stringify(item));
+
+
+      // Store  
+    localStorage.setItem("eName", "Manas");  
+
+    // Retrieve  
+    document.getElementById("cart").innerHTML = localStorage.getItem("eName"); 
+
+
+    var namesArr = [];  
+    namesArr.push('Manas'); //Add the text 'item1' to nameArr
+    localStorage.setItem('names', JSON.stringify(namesArr)); 
+
+
+
+
+    var storedNames = JSON.parse(localStorage.getItem("names")); 
+
+
+
+    function getAllItems()  
+    {    
+        for (i = 0; i <= localStorage.length-1; i++)    
+        {     
+            key = sessionStorage.key(i);    
+            val = sessionStorage.getItem(key);     
+        }   
+    }  
+
+
+
 }
