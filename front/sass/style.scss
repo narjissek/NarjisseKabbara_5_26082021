@@ -7,7 +7,7 @@ a {
     text-decoration: none;
 
     &:hover {
-        color: #a2370c;
+        color: #a2370c !important;
     }
 
 }
@@ -22,7 +22,6 @@ a {
     box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
     transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
     cursor: pointer;
-    flex: 1 1 200px;
 
   &:hover{
     transform: scale(1.05);
