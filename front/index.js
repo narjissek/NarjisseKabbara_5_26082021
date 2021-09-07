@@ -12,7 +12,7 @@ const insertProducts = async () => {
 
       for (let product of products) {
          document.getElementById("app").innerHTML += 
-         `<a class="link-dark p-2 px-3 d-flex align-items-stretch justify-content-center" href="produit.html?id=${product._id}">
+         `<a class="link-dark m-3 p-2 px-3 d-flex align-items-stretch justify-content-center" href="produit.html?id=${product._id}">
          <div class="card " style="width: 18rem;"> 
                  <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}"> 
                  <div class="card-body" id="article"> 

@@ -11,21 +11,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const product = document.getElementById("product");
 
-  product.innerHTML += `<div class="card" style="width: 50%;">
-                <img src="${item.imageUrl}" class="card-img-top" alt="...">
+  product.innerHTML += `<div class="" style="width: 40%;">
+                <img src="${item.imageUrl}" class="m-3 card-img-top" alt="...">
                 
-                <div class="card-body" id="article">
-                  <h5 class="card-title" id="article-titre">${item.name}</h5>
+                <div class="m-3 card-body" id="article">
+                  <h2 class="m-3 card-title" id="article-titre">${item.name}</h2>
 
-                  <span>choisir une couleur: </span> <select id="couleur" label="Choisir une couleur">
+                 <div class="m-3">
+                 <span>Choose a color:  </span> <select class="m-2 btn btn-secondary" id="couleur">
                     ${item.colors.map((color) => `<option>${color}</option>`)}
                   </select>
+                  </div> 
 
-                  <p class="card-text" id="article-description">${item.description}</p>
-                  <p class="font-weight-bold card-text"><span id="article-prix">${item.price * 0.01}</span>€</p>
-                  <button onClick='addToCart(${JSON.stringify(
+                  <p class="m-3 card-text" id="article-description">${item.description}</p>
+                  <p class="m-3 font-weight-bold card-text"><span id="article-prix">${item.price * 0.01}</span>€</p>
+                  <button class="m-3 btn btn-primary" onClick='addToCart(${JSON.stringify(
                     item
-                  )})'>Ajouter au panier </button>
+                  )})'>Add to cart </button>
                 </div>
             </div>`;
 });
