@@ -47,7 +47,7 @@ function addToCart(item) {
 
 
 
-      // Store  
+    // Store  
     localStorage.setItem("eName", "Manas");  
 
     // Retrieve  
