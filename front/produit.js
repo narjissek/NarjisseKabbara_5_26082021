@@ -25,12 +25,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                   <p class="m-3 card-text" id="article-description">${item.description}</p>
                   <p class="m-3 font-weight-bold card-text"><span id="article-prix">${item.price * 0.01}</span>€</p>
-                  <button class="m-3 btn btn-primary" onClick='addToCart(${JSON.stringify(
-                    item
-                  )})'>Add to cart </button>
+                  <button class="m-3 btn btn-primary" onClick='addToCart(${JSON.stringify(item)})'>Add to cart </button>
                 </div>
             </div>`;
 });
+
+
 
 
 function addToCart(item) {
@@ -43,6 +43,9 @@ function addToCart(item) {
 
   item["selectedColor"] = couleur;
   item.colors = undefined;
+
+  alert('thank you !');
+
 
 
 
