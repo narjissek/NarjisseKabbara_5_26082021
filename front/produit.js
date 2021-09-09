@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-
+let cartNumber = 1;
 
 function addToCart(item) {
   const couleur = document.getElementById("couleur").value;
@@ -53,13 +53,16 @@ function addToCart(item) {
 
   storage.setItem("panier", JSON.stringify(panier));
 
-  alert("thank you !");
-
-  // let cartNumber = document.getElementById("cartNumber");
-
-  // let cartNumber = 0;
-
   // cartNumber++;
 
-  // console.log(cartNumber++);
+  let cartNumberMore = document.getElementById("cartNumber");
+
+ cartNumberMore.innerHTML = cartNumber++;
+
+  alert("thank you !");
+
+  console.log(cartNumberMore);
+
 }
+
+
