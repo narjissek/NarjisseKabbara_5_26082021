@@ -39,14 +39,15 @@
       </nav>
   </header>
 
-
     <!-- BREADCRUMB -->
     <nav class="px-5" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">cart</li>
-      </ol>
-    </nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">home</a></li>
+          <li class="breadcrumb-item"><a href="panier.html">cart</a></li>
+          <li class="breadcrumb-item active" aria-current="page">infos</li>
+        </ol>
+      </nav>
+
 
     <!-- Main -->
 
@@ -59,57 +60,74 @@
         <div class="col-md-9">
             <div class="ibox">
                 <div class="ibox-title">
-                    <span class="pull-right">(<strong>5</strong>) items</span>
-                    <h5>Items in your cart</h5>
+                    <h5>Your informations</h5>
                 </div>
 
                 <div class="ibox-content">
-                    <div class="table-responsive">
-                        <table class="table shoping-cart-table">
-
-                            <tbody>
-                            <tr>
-                                <td width="90">
-                                    <div class="cart-product-imitation">
-                                      <img src="../back/images/teddy_2.jpg " alt="">
-
-                                    </div>
-                                </td>
-                                <td class="desc">
-                                    <h3>
-                                        <a href="#" class="text-navy">
-                                            PM software
-                                        </a>
-                                    </h3>
-                                    <p class="small">
-                                        Readable content of a page when looking at its layout. The point of using Lorem Ipsum is
-                                    </p>
-                                    <dl class="small m-b-none">
-                                        <dt>Description lists</dt>
-                                        <dd>A description list is perfect for defining terms.</dd>
-                                    </dl>
-
-                                    <div class="m-t-sm">
-                                        <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
-                                    </div>
-                                </td>
-
-                                <td>
-                                    $130,00
-                                </td>
-                                <td width="65">
-                                    <input type="text" class="form-control" placeholder="1">
-                                </td>
-                                <td>
-                                    <h4>
-                                        $130,00
-                                    </h4>
-                                </td>
-
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-4">
+                          <label for="validationCustom01" class="form-label">First name</label>
+                          <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <label for="validationCustom02" class="form-label">Last name</label>
+                          <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <label for="validationCustomUsername" class="form-label">e-mail</label>
+                          <div class="input-group has-validation">
+                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                              Please write a valid e-mail.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="validationCustom03" class="form-label">City</label>
+                          <input type="text" class="form-control" id="validationCustom03" required>
+                          <div class="invalid-feedback">
+                            Please provide a valid city.
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <label for="validationCustom04" class="form-label">State</label>
+                          <select class="form-select" id="validationCustom04" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option>...</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select a valid state.
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <label for="validationCustom05" class="form-label">Zip</label>
+                          <input type="text" class="form-control" id="validationCustom05" required>
+                          <div class="invalid-feedback">
+                            Please provide a valid zip.
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                              Agree to terms and conditions
+                            </label>
+                            <div class="invalid-feedback">
+                              You must agree before submitting.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <button class="btn btn-primary" type="submit">Submit form</button>
+                        </div>
+                      </form>
 
                 </div>
 
@@ -122,6 +140,8 @@
 
 
         </div>
+
+        
         <div class="col-md-3">
             <div class="ibox">
                 <div class="ibox-title">
