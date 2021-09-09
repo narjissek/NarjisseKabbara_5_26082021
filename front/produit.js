@@ -38,45 +38,18 @@ function addToCart(item) {
 
   const storage = window.localStorage;
 
-    
-  storage.setItem("panier", JSON.stringify(item));
-
   item["selectedColor"] = couleur;
   item.colors = undefined;
 
-  alert('thank you !');
+  let panier = JSON.parse(storage.getItem("panier"));
 
+  if (!panier) {
+    panier = [];
+  }
 
+  panier.push(item);
 
+  storage.setItem("panier", JSON.stringify(panier));
 
-
-    // Store  
-    localStorage.setItem("eName", "Manas");  
-
-    // Retrieve  
-    document.getElementById("cart").innerHTML = localStorage.getItem("eName"); 
-
-
-    var namesArr = [];  
-    namesArr.push('Manas'); //Add the text 'item1' to nameArr
-    localStorage.setItem('names', JSON.stringify(namesArr)); 
-
-
-
-
-    var storedNames = JSON.parse(localStorage.getItem("names")); 
-
-
-
-    function getAllItems()  
-    {    
-        for (i = 0; i <= localStorage.length-1; i++)    
-        {     
-            key = sessionStorage.key(i);    
-            val = sessionStorage.getItem(key);     
-        }   
-    }  
-
-
-
+  alert("thank you !");
 }
