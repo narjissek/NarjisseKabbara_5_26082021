@@ -25,10 +25,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                   <p class="m-3 card-text" id="article-description">${item.description}</p>
                   <p class="m-3 font-weight-bold card-text"><span id="article-prix">${item.price * 0.01}</span>€</p>
-                  <button class="m-3 btn btn-primary" onClick='addToCart(${JSON.stringify(item)})'>Add to cart </button>
+                  <div id="liveAlertPlaceholder">
+                  <button id="liveAlertBtn" class="m-3 btn btn-primary" onClick='addToCart(${JSON.stringify(item)})'>Add to cart </button>
+                  </div>
                 </div>
+                <div class="alert alert-primary" role="alert">
+  A simple primary alert—check it out!
+</div>
             </div>`;
 });
+
+
+
+
 
 
 
@@ -52,4 +61,21 @@ function addToCart(item) {
   storage.setItem("panier", JSON.stringify(panier));
 
   alert("thank you !");
+}
+
+
+var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+var alertTrigger = document.getElementById('liveAlertBtn')
+
+function alert(message, type) {
+  var wrapper = document.createElement('div')
+  wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+
+  alertPlaceholder.append(wrapper)
+}
+
+if (alertTrigger) {
+  alertTrigger.addEventListener('click', function () {
+    alert('Nice, you triggered this alert message!', 'success')
+  })
 }
