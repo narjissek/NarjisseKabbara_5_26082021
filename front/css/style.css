@@ -147,4 +147,8 @@ table.shoping-cart-table tr td:last-child {
   padding: 10px 15px;
 }
 
+.float-right {
+  float: right;
+}
+
 /*# sourceMappingURL=style.css.map */

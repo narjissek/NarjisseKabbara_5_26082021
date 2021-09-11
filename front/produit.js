@@ -53,6 +53,8 @@ function addToCart(item) {
 
   storage.setItem("panier", JSON.stringify(panier));
 
+  console.table(panier);
+
   // cartNumber++;
 
   let cartNumberMore = document.getElementById("cartNumber");

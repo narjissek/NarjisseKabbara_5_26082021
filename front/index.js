@@ -1,7 +1,5 @@
 const api = "http://localhost:3000/api/teddies";
 
-console.log("hello");
-
 const insertProducts = async () => {
 
    const products = await fetch(api)
@@ -23,8 +21,10 @@ const insertProducts = async () => {
             </a>`;   
     };
 
-    console.log("hello");
-
 }; 
 
 insertProducts();
+
+
+
+
