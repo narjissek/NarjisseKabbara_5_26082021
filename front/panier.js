@@ -1,23 +1,23 @@
-// code internet : Récupération des éléments du panier pour la page de panier ou la page de commande
-const getBasket = async (deleteProduct = false) => {
-    if (localStorage.getItem('products')) {
-      let products = []
-      let total = 0
-      products = JSON.parse(localStorage.getItem('products'))
-      const uniqueProducts = new Set([...products.map(item => item.id)])
-      let index = 1
-      for (let product of uniqueProducts) {
-        const data = await getProduct(product)
-        const lenses = products.filter(item => item.id == product)
-        document.getElementById("cartApp").innerHTML += "hello test panier"
-        document.getElementById("total-price").innerHTML = `${formatPrice(total += data.price * lenses.length)}`
-        index += 1
-      }
-    }
-    else {
-      document.getElementById("table-body").innerHTML += `<tr><th scope="row">Aucun produit</th></tr>`
-    }
-  }
+// // code internet : Récupération des éléments du panier pour la page de panier ou la page de commande
+// const getBasket = async (deleteProduct = false) => {
+//     if (localStorage.getItem('products')) {
+//       let products = []
+//       let total = 0
+//       products = JSON.parse(localStorage.getItem('products'))
+//       const uniqueProducts = new Set([...products.map(item => item.id)])
+//       let index = 1
+//       for (let product of uniqueProducts) {
+//         const data = await getProduct(product)
+//         const lenses = products.filter(item => item.id == product)
+//         document.getElementById("cartApp").innerHTML += "hello test panier"
+//         document.getElementById("total-price").innerHTML = `${formatPrice(total += data.price * lenses.length)}`
+//         index += 1
+//       }
+//     }
+//     else {
+//       document.getElementById("table-body").innerHTML += `<tr><th scope="row">Aucun produit</th></tr>`
+//     }
+//   }
 
 
 
@@ -26,21 +26,20 @@ const getBasket = async (deleteProduct = false) => {
 // mon code 
 
 const storage = window.localStorage;
-;
 
 
 const insertProductsToCart = async () => {
 
-if (storage.getItem('products')) {
+if (storage.getItem('panier')) {
     let panier = []
     let total = 0
     
-    products = JSON.parse(storage.getItem('products'))
+    products = JSON.parse(storage.getItem('panier'))
     
 }
   
       for (let product of products) {
-         document.getElementById("app").innerHTML += 
+         document.getElementById("cartApp").innerHTML += 
          `<a class="link-dark m-3 p-2 px-3 d-flex align-items-stretch justify-content-center" href="produit.html?id=${product._id}">
          <div class="homeCard " style="width: 18rem;"> 
                  <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}"> 
