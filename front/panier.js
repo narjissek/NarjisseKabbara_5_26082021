@@ -34,8 +34,7 @@ if (storage.getItem('panier')) {
     let panier = []
     let total = 0
     
-    products = JSON.parse(storage.getItem('panier'))
-    
+    products = JSON.parse(storage.getItem('panier'))    
 }
   
       for (let product of products) {
