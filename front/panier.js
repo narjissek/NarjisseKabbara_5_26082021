@@ -1,6 +1,5 @@
 const storage = window.localStorage;
 
-
 const insertProductsToCart = async () => {
 
 if (storage.getItem('panier')) {

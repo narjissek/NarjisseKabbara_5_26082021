@@ -1,2 +1,2 @@
-// const panier  = JSON.parse(window.localStorage.getItem("panier"));
+const panier  = JSON.parse(window.localStorage.getItem("panier"));
 
