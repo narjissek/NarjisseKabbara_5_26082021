@@ -48,9 +48,7 @@ const insertProductsToCart = async () => {
                      <td>
                          
                      </td>
-                     <td width="65">
-                         <input type="text" class="form-control" placeholder="1">
-                     </td>
+    
                      <td>
                          <h4>
                          <span id="article-prix">${product.price * 0.01}</span>€</p>
