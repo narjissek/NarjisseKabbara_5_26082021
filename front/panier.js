@@ -2,15 +2,16 @@ const storage = window.localStorage;
 
 const insertProductsToCart = async () => {
 
-if (storage.getItem('panier')) {
-    let panier = []
-    let total = 0
+    if (!storage.getItem('panier')){
+        return 
+    }
     
+    let total = 0
+        
     products = JSON.parse(storage.getItem('panier'))    
-}
   
-      for (let product of products) {
-         document.getElementById("cartApp").innerHTML += 
+    for (let product of products) {
+        document.getElementById("cartApp").innerHTML += 
 
          `<div class="ibox-content">
          <div class="table-responsive">
@@ -63,77 +64,17 @@ if (storage.getItem('panier')) {
 
      </div>`
 
-
+    total += product.price * 0.01; 
     };
 
+
+    document.getElementById("numberCart").innerHTML += products.length;
+
+    document.getElementById("cartTotal").innerHTML += `${total} €`;
 
 }; 
 
 insertProductsToCart();
 
 
-let cartPrice = product.price * 0.01;
-
-console.log(cartPrice);
-
-
-let cartTotal = () => {
-    const array = [1, 2, 3, 4];
-    let sum = 0;
-    
-    for (let i = 0; i < panier.length; i++) {
-        sum += panier[i];
-    }
-    console.log(sum);
-
-
-}
-
-cartTotal();
-
-document.getElementById("cartTotal").innerHTML += cartTotal;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // panier products you may be interested 
-
-
-// const insertProducts = async () => {
-
-//     const products = await fetch(api)
-//     .then((result) => result.json())
-//     .catch(() => console.log("le fetch n'a pas fonctionné"));
-     
-//      console.log(products);
- 
-//        for (let product of products) {
-//         document.getElementById("interestedProduct").innerHTML += 
-//         `<a href="produit.html?id=${product._id}" class="product-name">${product.name} </a>
-//             <div class="small m-t-xs">
-//             ${product.description}
-//             </div>
-//             <div class="m-t text-righ">
-//                 <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
-//             </div>
-//         `  
-//      };
- 
-//  }; 
- 
-//  insertProducts();
- 
- 
 
