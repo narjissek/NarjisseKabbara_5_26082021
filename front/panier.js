@@ -63,6 +63,7 @@ const insertProductsToCart = async () => {
      </div>`
 
     total += product.price * 0.01; 
+    
     };
 
 

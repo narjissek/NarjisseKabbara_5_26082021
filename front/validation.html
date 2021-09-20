@@ -64,17 +64,17 @@
                 </div>
 
                 <div class="ibox-content">
-                    <form class="row g-3 needs-validation" novalidate>
+                    <form onsubmit="order(event)" id="order-form" class="row g-3 needs-validation" >
                         <div class="col-md-4">
-                          <label for="validationCustom01" class="form-label">First name</label>
-                          <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                          <label for="firstName"  class="form-label">First name</label>
+                          <input type="text" pattern="[a-zA-Z0-9]+" name="firstName" class="form-control" id="firstName"  value="" required>
                           <div class="valid-feedback">
                             Looks good!
                           </div>
                         </div>
                         <div class="col-md-4">
-                          <label for="validationCustom02" class="form-label">Last name</label>
-                          <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                          <label for="lastName"  class="form-label">Last name</label>
+                          <input type="text" pattern="[a-zA-Z0-9]+" name="lastName" class="form-control" id="lastName"  value="" required>
                           <div class="valid-feedback">
                             Looks good!
                           </div>
@@ -83,20 +83,27 @@
                           <label for="validationCustomUsername" class="form-label">e-mail</label>
                           <div class="input-group has-validation">
                             <span class="input-group-text" id="inputGroupPrepend">@</span>
-                            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                            <input type="email" name="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                             <div class="invalid-feedback">
                               Please write a valid e-mail.
                             </div>
                           </div>
                         </div>
                         <div class="col-md-6">
+                          <label for="validationCustom03" class="form-label">Address</label>
+                          <input type="text" pattern="[a-zA-Z0-9]+" name="address" class="form-control" id="validationCustom03" required>
+                          <div class="invalid-feedback">
+                            Please provide a valid address.
+                          </div>
+                        </div>
+                        <div class="col-md-6">
                           <label for="validationCustom03" class="form-label">City</label>
-                          <input type="text" class="form-control" id="validationCustom03" required>
+                          <input type="text" pattern="[a-zA-Z0-9]+" name="city" class="form-control" id="validationCustom03" required>
                           <div class="invalid-feedback">
                             Please provide a valid city.
                           </div>
                         </div>
-                        <div class="col-md-3">
+                        <!-- <div class="col-md-3">
                           <label for="validationCustom04" class="form-label">State</label>
                           <select class="form-select" id="validationCustom04" required>
                             <option selected disabled value="">Choose...</option>
@@ -112,8 +119,8 @@
                           <div class="invalid-feedback">
                             Please provide a valid zip.
                           </div>
-                        </div>
-                        <div class="col-12">
+                        </div> -->
+                        <!-- <div class="col-12">
                           <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                             <label class="form-check-label" for="invalidCheck">
@@ -123,7 +130,7 @@
                               You must agree before submitting.
                             </div>
                           </div>
-                        </div>
+                        </div> -->
                         <div class="col-12">
                           <button class="btn btn-primary" type="submit">Submit form</button>
                         </div>
@@ -151,8 +158,8 @@
                     <span>
                         Total
                     </span>
-                    <h2 class="font-bold">
-                        $390,00
+                    <h2 id="cartTotalValidation" class="font-bold">
+                        
                     </h2>
 
                     <hr>
@@ -169,47 +176,30 @@
             </div>
 
             <div class="ibox">
-                <div class="ibox-title">
-                    <h5>Support</h5>
-                </div>
-                <div class="ibox-content text-center">
-                    <h3><i class="fa fa-phone"></i> +43 100 783 001</h3>
-                    <span class="small">
-                        Please contact with us if you have any questions. We are avalible 24h.
-                    </span>
-                </div>
-            </div>
+              <div class="ibox-title">
+                  <h5>Support</h5>
+              </div>
+              <div class="ibox-content text-center">
+                  <h3><i class="fa fa-phone"></i> +33 00 00 00 00 </h3>
+                  <span class="small">
+                      Please be kind when you contact us. It is our first big project ♡
+                  </span>
+              </div>
+          </div>
 
-            <div class="ibox">
-                <div class="ibox-content">
+          <div class="ibox">
+              <div class="ibox-content">
 
-                    <p class="font-bold">
-                    Other products you may be interested
-                    </p>
-                    <hr>
-                    <div>
-                        <a href="#" class="product-name"> Product 1</a>
-                        <div class="small m-t-xs">
-                            Many desktop publishing packages and web page editors now.
-                        </div>
-                        <div class="m-t text-righ">
+                  <p class="font-bold">
+                  Other products you may be interested ( or not )
+                  </p>
+                  <hr>
+                  <div id="interestedProduct">
+                  </div>
+                  <hr>
 
-                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
-                        </div>
-                    </div>
-                    <hr>
-                    <div>
-                        <a href="#" class="product-name"> Product 2</a>
-                        <div class="small m-t-xs">
-                            Many desktop publishing packages and web page editors now.
-                        </div>
-                        <div class="m-t text-righ">
-
-                            <a href="produit.html" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+              </div>
+          </div>
         </div>
     </div>
 </div>
@@ -297,6 +287,7 @@
     <script src="index.js"></script>
     <script src="produit.js"></script>
     <script src="panier.js"></script>
+    <script src="validatio.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
