@@ -1,3 +1,7 @@
+
+
+console.log("hello");
+
 async function order(e) {
     e.preventDefault();
   
@@ -5,6 +9,8 @@ async function order(e) {
   
     const storage = window.localStorage;
   
+    document.getElementById("cartTotal").innerHTML += `${total} €`;
+
     const panier = JSON.parse(storage.getItem("panier"));
   
     panier.forEach((item) => {
