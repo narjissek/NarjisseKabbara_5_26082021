@@ -66,6 +66,9 @@ const insertProductsToCart = async () => {
     
     };
 
+    console.log("hello");
+
+    storage.setItem('total', JSON.stringify(total));
 
     document.getElementById("numberCart").innerHTML += products.length;
 

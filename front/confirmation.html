@@ -44,7 +44,8 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">home</a></li>
           <li class="breadcrumb-item"><a href="panier.html">cart</a></li>
-          <li class="breadcrumb-item active" aria-current="page">infos</li>
+          <li class="breadcrumb-item"><a href="validation.html">infos</a></li>
+          <li class="breadcrumb-item active" aria-current="page">confirmation</li>
         </ol>
       </nav>
 
@@ -60,59 +61,14 @@
         <div class="col-md-9">
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>Your informations</h5>
+                    <h5>Yaaay ! </h5>
                 </div>
-
+                
                 <div class="ibox-content">
-                    <form onsubmit="order(event)" id="order-form" class="row g-3 needs-validation" >
-                        <div class="col-md-4">
-                          <label for="firstName"  class="form-label">First name</label>
-                          <input type="text" pattern="[a-zA-Z0-9]+" name="firstName" class="form-control" id="firstName"  value="" required>
-                          <div class="valid-feedback">
-                            Looks good!
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <label for="lastName"  class="form-label">Last name</label>
-                          <input type="text" pattern="[a-zA-Z0-9]+" name="lastName" class="form-control" id="lastName"  value="" required>
-                          <div class="valid-feedback">
-                            Looks good!
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <label for="validationCustomUsername" class="form-label">e-mail</label>
-                          <div class="input-group has-validation">
-                            <span class="input-group-text" id="inputGroupPrepend">@</span>
-                            <input type="email" name="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                              Please write a valid e-mail.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <label for="validationCustom03" class="form-label">Address</label>
-                          <input type="text" pattern="[a-zA-Z0-9]+" name="address" class="form-control" id="validationCustom03" required>
-                          <div class="invalid-feedback">
-                            Please provide a valid address.
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <label for="validationCustom03" class="form-label">City</label>
-                          <input type="text" pattern="[a-zA-Z0-9]+" name="city" class="form-control" id="validationCustom03" required>
-                          <div class="invalid-feedback">
-                            Please provide a valid city.
-                          </div>
-                        </div>
-                        <div class="col-12">
-                          <button class="btn btn-primary" type="submit">Submit form</button>
-                        </div>
-                      </form>
+                    <p id="confirm"></p>
 
                 </div>
 
-                <div class="ibox-content">
-                    <a class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</a>
-                </div>
             </div>
 
 
@@ -257,6 +213,6 @@
     <!-- javascript -->
     <script src="panier.js"></script>
     <script src="validation.js"></script>
-    <script src="main.js"></script>
+    <script src="confirmation.js"></script>
 </body>
 </html>
