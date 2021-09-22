@@ -1,22 +1,34 @@
+const storage = window.localStorage
 
+const total = storage.getItem("total")
+document.getElementById("cartTotalValidation").innerHTML = `${total}€`
 
-console.log("hello");
+// creer fonction order pour ce qui se passe lorsqu'on clique sur le bouton submit 
 
 async function order(e) {
     e.preventDefault();
-  
-    let productIds = [];
-  
-    const storage = window.localStorage;
-  
-    document.getElementById("cartTotal").innerHTML += `${total} €`;
 
-    const panier = JSON.parse(storage.getItem("panier"));
-  
-    panier.forEach((item) => {
-      productIds.push(item._id);
-    });
-  
+    console.log("ordeeer")
+
+
+
+    // ici on a besoin du local storage pour récupérer l'ID de la commande
+    const storage = window.localStorage;
+    const panier = JSON.parse(storage.getItem('panier'));
+
+    // initialise la variabel productIds en array
+    let productIds = [];
+
+
+    // boucle pour récupérer l'order Id. 
+    panier.forEach(item => {
+      productIds.push(item._id)
+      
+    })
+
+    console.log(productIds);
+    console.log("productIds");
+
     const formData = new FormData(document.getElementById("order-form"));
   
     const data = {
@@ -29,18 +41,41 @@ async function order(e) {
       },
       products: productIds,
     };
-  
-    const postOrder = await fetch("http://localhost:3000/api/teddies/order", {
+
+    
+    // envoyer ensuite les données récupérés dans le back - utiliser fetch pour se lier a l'api mais avec la méthode post pour envoyer
+
+    const postOrder = await fetch('http://localhost:3000/api/teddies/order', {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "content-Type": "application/json"},
       body: JSON.stringify(data),
+    
     });
-  
-    
+
     const result = await postOrder.json();
-  
+
+
+    // pour rediriger directement avec l'ID de la commande :  window.location.href =`../front/confirmation.html?orderid=${result.orderId}&total=`;
+
+
     storage.setItem("orderId", result.orderId);
+
+    window.location.href = `../front/confirmation.html`;
+
+
+    
+    
+
+
+
+
+
+
+}
+
+
+
+
+  
   
     
-    window.location.href = `../front/confirmation.html`;
-  }

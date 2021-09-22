@@ -55,15 +55,15 @@ function addToCart(item) {
 
   console.table(panier);
 
-  // cartNumber++;
+//   // cartNumber++;
 
-  let cartNumberMore = document.getElementById("cartNumber");
+//   let cartNumberMore = document.getElementById("cartNumber");
 
- cartNumberMore.innerHTML = cartNumber++;
+//  cartNumberMore.innerHTML = cartNumber++;
 
   alert("thank you !");
 
-  console.log(cartNumberMore);
+
 
 }
 
