@@ -40,8 +40,9 @@ const insertProductsToCart = async () => {
                          </dl>
 
                          <div class="m-t-sm">
-                             
-                             <a href="#" class="text-muted float-right"><i class="fa fa-trash"></i> Remove item</a>
+
+                         <button onClick='${storage.removeItem('panier')}' >Enlever Item du panier</button>
+                             <a id="remove" href="#" class="text-muted float-right"><i class="fa fa-trash"></i> Remove item</a>
                          </div>
                      </td>
 
@@ -73,6 +74,7 @@ const insertProductsToCart = async () => {
     document.getElementById("numberCart").innerHTML += products.length;
 
     document.getElementById("cartTotal").innerHTML += `${total} €`;
+    
 
 }; 
 

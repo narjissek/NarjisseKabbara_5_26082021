@@ -21,10 +21,7 @@ const insertArticles = async () => {
 
     // console.log("hello");
 
-    storage.setItem('articles', JSON.stringify(articles));
-
-
-    
+    storage.setItem('articles', JSON.stringify(articles));    
 
 }; 
 

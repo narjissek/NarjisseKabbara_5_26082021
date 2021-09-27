@@ -1,3 +1,5 @@
+//  aller se connecter à l'API 
+
 document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(window.location.search);
 
@@ -32,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-let cartNumber = 1;
+
 
 function addToCart(item) {
   const couleur = document.getElementById("couleur").value;
@@ -55,11 +57,6 @@ function addToCart(item) {
 
   console.table(panier);
 
-//   // cartNumber++;
-
-//   let cartNumberMore = document.getElementById("cartNumber");
-
-//  cartNumberMore.innerHTML = cartNumber++;
 
   alert("thank you !");
 

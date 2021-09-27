@@ -8,11 +8,8 @@ document.getElementById("cartTotalValidation").innerHTML = `${total}€`
 async function order(e) {
     e.preventDefault();
 
-    console.log("ordeeer")
 
-
-
-    // ici on a besoin du local storage pour récupérer l'ID de la commande
+    // ici on a besoin du local storage pou*r récupérer l'ID de la commande
     const storage = window.localStorage;
     const panier = JSON.parse(storage.getItem('panier'));
 
