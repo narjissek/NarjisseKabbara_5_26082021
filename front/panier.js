@@ -38,12 +38,6 @@ const insertProductsToCart = async () => {
                              <dt>color :</dt>
                              <dd>${product.selectedColor}</dd>
                          </dl>
-
-                         <div class="m-t-sm">
-
-                         <button onClick='${storage.removeItem('panier')}' >Enlever Item du panier</button>
-                             <a id="remove" href="#" class="text-muted float-right"><i class="fa fa-trash"></i> Remove item</a>
-                         </div>
                      </td>
 
                      <td>
