@@ -1,3 +1,4 @@
+// connexion a l'API  
 const api = "http://localhost:3000/api/teddies";
 
 const insertProducts = async () => {

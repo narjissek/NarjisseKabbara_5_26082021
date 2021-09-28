@@ -1,5 +1,4 @@
-//  aller se connecter à l'API 
-
+// connexion a l'API  
 document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(window.location.search);
 
@@ -33,9 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 
-
-
-
+// creation de la fonction addToCart pour ajouter les items produits selectionnés au panier
 function addToCart(item) {
   const couleur = document.getElementById("couleur").value;
 
@@ -55,12 +52,8 @@ function addToCart(item) {
 
   storage.setItem("panier", JSON.stringify(panier));
 
-  console.table(panier);
-
 
   alert("thank you !");
-
-
 
 }
 

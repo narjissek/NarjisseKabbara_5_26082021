@@ -1,5 +1,5 @@
+// panier 
 const storage = window.localStorage;
-
 const insertProductsToCart = async () => {
 
     if (!storage.getItem('panier')){
@@ -13,55 +13,46 @@ const insertProductsToCart = async () => {
     for (let product of products) {
         document.getElementById("cartApp").innerHTML += 
 
-         `<div class="ibox-content">
-         <div class="table-responsive">
+        `
+        <div class="ibox-content">
+            <div class="table-responsive">
              <table class="table shoping-cart-table">
-
                  <tbody>
-                 <tr>
-                     <td width="90">
-                         <div class="cart-product-imitation">
-                         <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}"> 
+                    <tr>
+                    <td width="90">
+                        <div class="cart-product-imitation">
+                            <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}"> 
+                        </div>
+                    </td>
 
-                         </div>
-                     </td>
-                     <td class="desc">
-                         <h3>
-                             <a href="#" class="text-navy">
-                             ${product.name}
-                             </a>
-                         </h3>
-                         <p class="small">
-                         ${product.description}
-                         </p>
-                         <dl class="small m-b-none">
-                             <dt>color :</dt>
-                             <dd>${product.selectedColor}</dd>
-                         </dl>
-                     </td>
-
-                     <td>
-                         
-                     </td>
-    
-                     <td>
-                         <h4>
-                         <span id="article-prix">${product.price * 0.01}</span>€</p>
-                         </h4>
-                     </td>
-
-                 </tr>
-                 </tbody>
-             </table>
-         </div>
-
-     </div>`
+                    <td class="desc">
+                        <h3>
+                            <a href="#" class="text-navy">
+                                ${product.name}
+                            </a>
+                        </h3>
+                        <p class="small">
+                            ${product.description}
+                        </p>
+                        <dl class="small m-b-none">
+                                <dt>color :</dt>
+                            <dd>${product.selectedColor}</dd>
+                        </dl>
+                    </td>
+                    
+                    <td><h4><span id="article-prix">${product.price * 0.01}</span>€</p></h4>
+                    </td>
+                    </tr>
+                    </tbody> Ò
+                </table>
+            </div>
+        </div>
+        `
 
     total += product.price * 0.01; 
     
     };
 
-    // console.log("hello");
 
     storage.setItem('total', JSON.stringify(total));
 
