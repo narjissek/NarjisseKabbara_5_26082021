@@ -1,17 +1,21 @@
-// connexion a l'API  
+// affichage du produit selectionné dans la page index.html dans sa propre page grace a la recupération de l'ID - url avec l'ID du produit 
 document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(window.location.search);
 
+  // constante pour stocker l'ID du produit selectionné
   const id = params.get("id");
 
+  // appeler l'api avec comme url l'ID selectionné 
   const item = await fetch(`http://localhost:3000/api/teddies/${id}`)
+  // resultat du fetch retourné et mis en format json
     .then((res) => res.json())
+  // si le fetch n'a pas fonctionné affiche un msg dans la console 
     .catch((e) => console.log("le fetch n'a pas fonctionné"));
 
-  console.log(item);
-
+// création d'une constante product qui vient stocké l'ID product 
   const product = document.getElementById("product");
 
+  // création et ajout du html dans la page en utilisant les valeurs récupérés  
   product.innerHTML += `<div class="" style="width: 40%;">
                 <img src="${item.imageUrl}" class="m-3 card-img-top" alt="...">
                 
@@ -34,25 +38,33 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 // creation de la fonction addToCart pour ajouter les items produits selectionnés au panier
 function addToCart(item) {
+
+  // la couleur selectionné est stocké dans une fonction constante couleur
   const couleur = document.getElementById("couleur").value;
 
+  // création de la constante storage pour aller appeler le local storage
   const storage = window.localStorage;
 
+  // approprier la valeur de la couleur selectionné a la couleur 
   item["selectedColor"] = couleur;
   item.colors = undefined;
 
-  
+  // declaration de la variable panier correspondant a ce qu'il y a comme produits dans le local storage
   let panier = JSON.parse(storage.getItem("panier"));
 
+  // si le panier est vide création de la variable en tant que array 
   if (!panier) {
     panier = [];
   }
 
+  // ajout des éléments dans le tableau panier
   panier.push(item);
 
+  // création d'une nouvelle clé dans le local storage, panier, ou les valeurs des produits seront ajoutés
   storage.setItem("panier", JSON.stringify(panier));
 
 
+  // alerte a l'utilisateur lorsque le produit a été ajouté 
   alert("thank you !");
 
 }
