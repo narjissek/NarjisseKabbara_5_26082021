@@ -62,14 +62,6 @@ async function order(e) {
     window.location.href = `../front/confirmation.html`;
 
 
-    
-    
-
-
-
-
-
-
 }
 
 

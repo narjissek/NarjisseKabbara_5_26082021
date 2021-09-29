@@ -24,7 +24,6 @@ const insertProducts = async () => {
               </div>
             </a>`;   
     };
-
 }; 
 
 
