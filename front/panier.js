@@ -4,7 +4,8 @@ const storage = window.localStorage;
 // fonction insertProductsToCart, constante créée pour afficher les produits ajoutés au panier
 const insertProductsToCart = async () => {
 
-    // verifie s'il y a bien une catégorie panier dans le local storage - si oui la retourne
+    
+    // s’il n’y a pas de « panier » dans localStorage, la fonction s’arrête à cet endroit et le reste ne s’exécutera pas. le return met fin à la fonction en cours.
     if (!storage.getItem('panier')){
         return 
     }
@@ -54,7 +55,10 @@ const insertProductsToCart = async () => {
             </div>
         </div>
         `
-
+    
+        
+    // total de mon panier, on ajoute a la fonction initialisé plus haut à 0 le prix de chaque element de la boucle
+    // on multiplie par 0,01 pour avoir le prix correct par rapport a celui renvoyé par le back.
     total += product.price * 0.01; 
     
     };

@@ -9,7 +9,8 @@ document.getElementById("cartTotalValidation").innerHTML = `${total}€`
 
 // fonction order pour gérer tout ce qui se passe lorsqu'on clique sur le bouton submit 
 async function order(e) {
-    // prevent Default pour ce que la async function order ne fasse que ce qu'y est écrit ci apres
+   
+    // preventDefault pour empêcher le comportement par défaut de l’événement submit qui recharge la page et empêche donc d’exécuter la suite de la fonction.
     e.preventDefault();
 
     // appeler le local storage - création de la constante storage 
